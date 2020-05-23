@@ -1,0 +1,15 @@
+<div class="calendario">
+
+  <full-calendar
+  *ngIf="options"
+  [editable]="true"
+  [events] = "calendarEvents"
+  [header]="options.header"
+  [customButtons]="options.customButtons"
+  [plugins]="options.plugins"
+  locales = 'pt-br'
+  eventLimit= 1
+  (dateClick)="handleDateClick($event)"
+  ></full-calendar>
+
+</div>

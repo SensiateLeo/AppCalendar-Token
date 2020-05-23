@@ -1,0 +1,33 @@
+
+<h3>Dados do Evento: </h3>
+<div class="create-edit">
+    <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label>Data Evento: </label>
+            <input type="date" name="data" [(ngModel)] = "evento.data" class="form-control" placeholder="Data Evento">
+        </div>
+    
+        <div class="form-group">
+            <label>Horário Início: </label>
+            <input type="time" name="inicio" [(ngModel)] = "evento.inicio" class="form-control" placeholder="Horário Início">
+        </div>
+    
+        <div class="form-group">
+            <label>Horário Fim: </label>
+            <input type="time" name="fim" [(ngModel)] = "evento.fim" class="form-control" placeholder="Horário Fim">
+        </div>
+    
+        <div class="form-group">
+            <label>Descrição: </label>
+            <input type="text" name="descricao" [(ngModel)] = "evento.descricao" class="form-control" placeholder="Descrição do Evento">
+        </div>
+    
+        <button class="btn btn-primary" align="center" [disabled]="!evento.data || !evento.inicio || !evento.fim || !evento.descricao">Gravar Evento</button>
+        <button class="btn btn-danger nl-2" align="center" (click)="resetaEvento()">Cancelar</button>
+    
+    </form> 
+</div>
+
+
+

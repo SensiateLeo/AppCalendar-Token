@@ -1,0 +1,31 @@
+
+<div class="tabela">
+    <h3 align="center">Lista de Eventos
+    </h3>
+    
+    <table class="table table-hover table-striped">
+        <thead>
+            <th>Data</th>
+            <th>Início</th>
+            <th>Fim</th>
+            <th>Descrição</th>
+            <th></th>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let evento of eventos  | async | orderBy: key : reverse; let i = index">
+                <td>{{ evento.data }}</td>
+                <td>{{ evento.inicio }}</td>
+                <td>{{ evento.fim }}</td>
+                <td>{{ evento.descricao }}</td>
+                <td>
+                    <button class="btn btn-info" (click)="edit(evento, evento.key)">Editar</button>
+                    <button class="btn btn-danger nl-2" (click)="delete(evento.key)">Excluir</button>
+                </td>
+            </tr> 
+        </tbody>
+    </table>
+</div>
+
+
+

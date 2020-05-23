@@ -1,0 +1,31 @@
+<h1>Login</h1>
+<br>
+<p>Se você já tem uma conta, faça seu login</p>
+<p>Caso ainda não tenha uma conta, preencha os campos "Email" e "Senha" e "Registre-se"</p>
+
+<label>Email</label>
+<div class="email">
+    <input type="text" [(ngModel)]="email" placeholder="Email">
+</div>
+
+<label>Senha </label>
+<div class="senha">
+    <input type="password" [(ngModel)]="password" placeholder="Senha">
+    <p>
+        <font size="2" face="Verdana">
+        A Senha deve ter no mínimo 6 caracteres
+        </font>
+        </p>
+</div>
+
+<div class="botões">
+    <button class="btn btn-danger" (click)="login()" [disabled]="!email || !password">
+    Login
+    </button>
+    <br><br>
+    <button class="btn btn-danger" (click)="signup()" [disabled]="!email || !password">
+    Registrar-se
+    </button>
+</div>
+
+

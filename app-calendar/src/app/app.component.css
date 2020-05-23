@@ -1,0 +1,35 @@
+.calendario {
+    float: left;
+    width: 50%;
+    position: absolute;
+     
+    }
+
+.inserts-edit-list{
+    margin-left: 52%;
+    float: left;
+    position: auto;
+    width: 50;
+}
+
+.btn-danger{
+    position:relative;
+}
+
+/* Header/Logo Title */
+.logo {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    background: #1E90FF;
+    color: white;
+    font-size: 10px;
+  }
+
+  .jumbotron {
+    float: center;
+    margin-left: 35%;
+    width: 30%;
+    color: white;
+    background: #1E90FF;
+}

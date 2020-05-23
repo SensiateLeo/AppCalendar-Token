@@ -1,0 +1,28 @@
+<div *ngIf="authService.user | async">
+
+  <div class="logo" align="center">
+      <h1>Calendário de Eventos</h1>
+      <br>
+      <h5>{{ (authService.user | async)?.email }}</h5>
+      <button class="btn btn-danger" (click)="logout()" *ngIf="authService.user | async">Logout</button>
+  </div>
+  
+  <br>
+
+  <div class="calendario" align="left">
+      <full-calendario (criacaoInicio)="atualiza($event)" (dataClique)="setData($event)"></full-calendario>
+      <br>
+  </div>
+
+  <div class="inserts-edit-list" align="left">
+    <app-list *ngIf="!criacao" (edicaoInicio)="atualiza($event)"></app-list>
+    <app-edit *ngIf="criacao"  (criacaoFim)="finaliza($event)" [dataClique]="dataReceive"></app-edit>    
+  </div>
+
+</div>
+
+<div class = "jumbotron" *ngIf="!(authService.user | async)" align = center>
+  <app-auth></app-auth>
+</div>
+
+
